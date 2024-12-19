@@ -1,0 +1,14 @@
+[
+    {
+        "title": "Spaghetti Bolognese",
+        "ingredients": "Spaghetti. minced beef. tomato sauce",
+        "steps": "Cook the spaghetti. Brown the minced beef. Add the tomato sauce and mix.",
+        "image_path": "images/bolognese.jpg"
+    },
+    {
+        "title": "Vegetarian Curry",
+        "ingredients": "Vegetables. coconut milk. curry powder",
+        "steps": "Chop the vegetables. Saute them with curry powder. Add the coconut milk and let it simmer.",
+        "image_path": "images/VegetarianCurry.jpg"
+    }
+]
