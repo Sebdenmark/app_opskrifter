@@ -17,7 +17,7 @@ class WelcomeScreen(Screen):
 
         # Label for forsiden
         self.welcome_label = Label(
-            text="Hej! Så du ved ikke hvad du skal lave til aftensmad i dag?\nLad mig hjælpe dig, tryk på knappen under.",
+            text="Hej! Hvad vil du lave i dag?\nVælg mellem almindelige og vegetariske opskrifter.",
             font_size=24,
             halign='center',
             valign='middle',
@@ -25,26 +25,56 @@ class WelcomeScreen(Screen):
         )
         self.main_layout.add_widget(self.welcome_label)
 
-        # Knap til at finde en opskrift
-        self.button = Button(
-            text="Find en opskrift",
+        # Knap til almindelige opskrifter
+        self.button_regular = Button(
+            text="Almindelige opskrifter",
             size_hint=(1, 0.2),
             background_color=(0.2, 0.6, 0.8, 1),
             font_size=20
         )
-        self.button.bind(on_press=self.go_to_recipe)
-        self.main_layout.add_widget(self.button)
+        self.button_regular.bind(on_press=self.go_to_recipe_regular)
+        self.main_layout.add_widget(self.button_regular)
+
+        # Knap til vegetariske opskrifter
+        self.button_vegetarian = Button(
+            text="Vegetariske opskrifter",
+            size_hint=(1, 0.2),
+            background_color=(0.2, 0.8, 0.4, 1),
+            font_size=20
+        )
+        self.button_vegetarian.bind(on_press=self.go_to_recipe_vegetarian)
+        self.main_layout.add_widget(self.button_vegetarian)
+
+        self.button_dessert = Button(
+            text="Desserter",
+            size_hint=(1, 0.2),
+            background_color=(0.8, 0.4, 0.2, 1),
+            font_size=20
+        )
+        self.button_dessert.bind(on_press=self.go_to_recipe_dessert)
+        self.main_layout.add_widget(self.button_dessert)
 
         self.add_widget(self.main_layout)
 
-    def go_to_recipe(self, instance):
-        self.manager.current = 'recipe'  # Skift til opskriftskærmen
-        self.manager.get_screen('recipe').prepare_recipe()  # Forbered opskriften før visning
+    def go_to_recipe_regular(self, instance):
+        self.manager.current = 'recipe'
+        recipe_screen = self.manager.get_screen('recipe')
+        recipe_screen.prepare_recipe("recipes.json")
 
+    def go_to_recipe_vegetarian(self, instance):
+        self.manager.current = 'recipe'
+        recipe_screen = self.manager.get_screen('recipe')
+        recipe_screen.prepare_recipe("vegetarian_recipes.json")
+
+    def go_to_recipe_dessert(self, instance):
+        self.manager.current = 'recipe'
+        recipe_screen = self.manager.get_screen('recipe')
+        recipe_screen.prepare_recipe("dessert_recipes.json")
 
 class RecipeScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+        self.current_recipe_file = "recipes.json"  # Standardfil
 
         self.main_layout = BoxLayout(orientation='vertical', padding=20, spacing=10)
 
@@ -100,12 +130,18 @@ class RecipeScreen(Screen):
 
         self.add_widget(self.main_layout)
 
-    def prepare_recipe(self):
+    def prepare_recipe(self, recipe_file=None):
+        # Brug den angivne fil, eller falder tilbage til den nuværende fil
+        if recipe_file:
+            self.current_recipe_file = recipe_file
+        else:
+            recipe_file = self.current_recipe_file
+
         # Skjul layoutet indtil opskriften er klar
         self.main_layout.opacity = 0
 
-        # Hent opskriften og opdater indholdet
-        recipes = load_recipes("recipes.json")
+        # Hent opskrifter fra filen
+        recipes = load_recipes(recipe_file)
         title, ingredients, steps, image_path = get_random_recipe(recipes)
 
         # Opdater opskriftens data
@@ -120,7 +156,7 @@ class RecipeScreen(Screen):
         else:
             self.image_widget.source = ""
 
-        # Opdater ingredienser og fremgangsmåde, kun hvis de er tilgængelige
+        # Opdater ingredienser og fremgangsmåde
         if ingredients:
             ingredients_list = ingredients.split(". ")
             ingredients_text = "\n".join([ingredient.strip() for ingredient in ingredients_list])
@@ -140,6 +176,7 @@ class RecipeScreen(Screen):
         animation.start(self.main_layout)
 
     def display_new_recipe(self, instance):
+        # Brug altid den aktive opskriftsfil
         self.prepare_recipe()
 
 

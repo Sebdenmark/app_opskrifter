@@ -1,0 +1,116 @@
+[
+    {
+        "title": "Spaghetti Bolognese",
+        "ingredients": "250g Spaghetti. 300g minced beef. 200g tomato sauce. 1 onion. 2 cloves garlic. 1 tbsp olive oil.",
+        "steps": "Cook the spaghetti according to the package instructions. Brown the minced beef in olive oil. Chop and sauté the onion and garlic. Add the tomato sauce to the beef and simmer.",
+        "image_path": "images/bolognese.jpg"
+    },
+    {
+        "title": "Vegetarian Curry",
+        "ingredients": "200g mixed vegetables carrots, peas, potatoes. 1 can coconut milk 400ml. 1 tbsp curry powder. 1 tbsp olive oil.",
+        "steps": "Chop the vegetables. Saute them with curry powder in olive oil for 5 minutes. Add coconut milk and let it simmer for 15 minutes.",
+        "image_path": "images/VegetarianCurry.jpg"
+    },
+    {
+        "title": "Pancakes",
+        "ingredients": "200g flour. 2 eggs. 300ml milk. 1 tbsp sugar. 1 tsp vanilla extract. Butter for cooking.",
+        "steps": "Mix the flour, eggs, milk, sugar, and vanilla. Heat a non stick pan with butter. Pour the batter into the pan and cook until golden brown on both sides.",
+        "image_path": "images/pancakes.jpg"
+    },
+    {
+        "title": "Grilled Cheese Sandwich",
+        "ingredients": "2 slices bread. 2 slices cheese. 1 tbsp butter.",
+        "steps": "Butter the bread. Place cheese between the slices of bread. Grill the sandwich in a pan until golden brown on both sides.",
+        "image_path": "images/grilled_cheese.jpg"
+    },
+    {
+        "title": "Caesar Salad",
+        "ingredients": "100g lettuce. 50g Parmesan cheese. 2 tbsp Caesar dressing. 1 slice bread for croutons.",
+        "steps": "Chop the lettuce. Grate the Parmesan cheese. Make croutons by toasting the bread. Toss the lettuce, cheese, dressing, and croutons together.",
+        "image_path": "images/caesar_salad.jpg"
+    },
+    {
+        "title": "Tomato Soup",
+        "ingredients": "400g canned tomatoes. 1 onion. 2 cloves garlic. 1 tbsp olive oil. 500ml vegetable stock.",
+        "steps": "Chop the onion and garlic. Saute in olive oil until soft. Add the tomatoes and vegetable stock. Simmer for 15 minutes and blend.",
+        "image_path": "images/tomato_soup.jpg"
+    },
+    {
+        "title": "Chicken Stir Fry",
+        "ingredients": "300g chicken breast. 1 bell pepper. 1 onion. 2 tbsp soy sauce. 1 tbsp olive oil.",
+        "steps": "Chop the chicken and vegetables. Stirfry the chicken in olive oil. Add the vegetables and soy sauce, then cook until tender.",
+        "image_path": "images/chicken_stir_fry.jpg"
+    },
+    {
+        "title": "Beef Tacos",
+        "ingredients": "250g minced beef. 1 taco seasoning packet. 6 taco shells. 100g shredded lettuce. 50g cheese.",
+        "steps": "Cook the minced beef with the taco seasoning. Fill the taco shells with beef, lettuce, and cheese.",
+        "image_path": "images/beef_tacos.jpg"
+    },
+    {
+        "title": "Mac and Cheese",
+        "ingredients": "200g macaroni pasta. 150g cheddar cheese. 250ml milk. 1 tbsp butter. 1 tbsp flour.",
+        "steps": "Cook the macaroni. In a pan, melt the butter, add flour, then gradually add the milk to make a sauce. Stir in the cheese until melted. Combine with the macaroni.",
+        "image_path": "images/mac_and_cheese.jpg"
+    },
+    {
+        "title": "Chicken Salad",
+        "ingredients": "200g chicken breast. 50g mixed greens. 1 tomato. 1 cucumber. 2 tbsp ranch dressing.",
+        "steps": "Cook the chicken breast and slice it. Chop the vegetables. Toss all ingredients together with the dressing.",
+        "image_path": "images/chicken_salad.jpg"
+    },
+    {
+        "title": "Egg Fried Rice",
+        "ingredients": "200g rice. 2 eggs. 2 tbsp soy sauce. 1 tbsp sesame oil. 1 onion.",
+        "steps": "Cook the rice. Scramble the eggs in a pan. Stir fry the chopped onion in sesame oil. Add the rice, eggs, and soy sauce, and stir until heated through.",
+        "image_path": "images/egg_fried_rice.jpg"
+    },
+    {
+        "title": "Chicken Nuggets",
+        "ingredients": "300g chicken breast. 1 cup breadcrumbs. 1 egg. 1 tbsp flour. Salt and pepper.",
+        "steps": "Cut the chicken into nugget sized pieces. Coat in flour, dip in egg, and coat in breadcrumbs. Bake or fry until golden brown.",
+        "image_path": "images/chicken_nuggets.jpg"
+    },
+    {
+        "title": "Vegetable Soup",
+        "ingredients": "200g mixed vegetables (carrots, potatoes, peas). 500ml vegetable stock. 1 onion. 1 tbsp olive oil.",
+        "steps": "Chop the vegetables and onion. Saute the onion in olive oil, then add the vegetables and stock. Simmer for 20 minutes.",
+        "image_path": "images/vegetable_soup.jpg"
+    },
+    {
+        "title": "Beef Stew",
+        "ingredients": "400g beef stew meat. 2 carrots. 2 potatoes. 500ml beef stock. 1 onion.",
+        "steps": "Brown the beef in a pan. Chop the vegetables and add them to the pot with the beef. Pour in the stock and simmer for 1 hour.",
+        "image_path": "images/beef_stew.jpg"
+    },
+    {
+        "title": "Shrimp Pasta",
+        "ingredients": "200g pasta. 200g shrimp. 1 garlic clove. 1 tbsp olive oil. 100ml cream.",
+        "steps": "Cook the pasta. Saute the shrimp and garlic in olive oil. Add the cream and cooked pasta, and mix everything together.",
+        "image_path": "images/shrimp_pasta.jpg"
+    },
+    {
+        "title": "Fish and Chips",
+        "ingredients": "2 fish fillets. 2 large potatoes. 1 tbsp flour. 1 egg. 1 tbsp olive oil.",
+        "steps": "Cut the potatoes into fries and bake. Coat the fish fillets in flour, dip in beaten egg, and fry until crispy. Serve with the fries.",
+        "image_path": "images/fish_and_chips.jpg"
+    },
+    {
+        "title": "Cheese Quesadilla",
+        "ingredients": "2 tortillas. 100g cheese. 1 tbsp butter.",
+        "steps": "Place the cheese between the tortillas. Heat a pan with butter and cook the quesadilla on both sides until golden brown.",
+        "image_path": "images/cheese_quesadilla.jpg"
+    },
+    {
+        "title": "Fried Chicken",
+        "ingredients": "4 chicken pieces. 1 cup flour. 1 tsp paprika. Salt and pepper. Oil for frying.",
+        "steps": "Coat the chicken in flour and seasoning. Fry the chicken in hot oil until golden and crispy.",
+        "image_path": "images/fried_chicken.jpg"
+    },
+    {
+        "title": "Lasagna",
+        "ingredients": "300g ground beef. 200g tomato sauce. 1 onion. 200g lasagna noodles. 200g cheese.",
+        "steps": "Cook the beef and onions. Layer the noodles, beef sauce, and cheese in a baking dish. Bake at 180 degrees for 40 minutes.",
+        "image_path": "images/lasagna.jpg"
+    }
+]

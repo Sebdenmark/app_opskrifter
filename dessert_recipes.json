@@ -1,0 +1,68 @@
+[
+    {
+        "title": "Chocolate Cake",
+        "ingredients": "200g butter. 200g sugar. 4 eggs. 200g flour. 50g cocoa.",
+        "steps": "Melt the butter. Whisk eggs and sugar. Mix flour and cocoa. Bake at 180°C for 30 minutes.",
+        "image_path": "images/Chokoladekage.jpg"
+    },
+    {
+        "title": "Vanilla Ice Cream",
+        "ingredients": "500ml cream. 200ml milk. 150g sugar. 1 vanilla pod.",
+        "steps": "Boil cream and milk with vanilla pod. Whisk sugar into eggs. Mix egg mixture into cream. Freeze for 4 hours.",
+        "image_path": "images/vaniljeis.jpg"
+    },
+    {
+        "title": "Apple Cake",
+        "ingredients": "4 apples. 200g sugar. 100g butter. 100g flour. 1 teaspoon cinnamon.",
+        "steps": "Slice the apples. Mix sugar, butter, flour, and cinnamon. Place apples in a baking dish and cover with the dough. Bake at 180°C for 25 minutes.",
+        "image_path": "images/aeblekage.jpg"
+    },
+    {
+        "title": "Lemon Mousse",
+        "ingredients": "2 lemons. 200ml cream. 150g sugar. 3 eggs.",
+        "steps": "Whisk cream and sugar together. Add lemon juice and eggs. Freeze for 3 hours.",
+        "image_path": "images/citronmousse.jpg"
+    },
+    {
+        "title": "Chocolate Fondant",
+        "ingredients": "200g dark chocolate. 100g butter. 2 eggs. 100g sugar. 50g flour.",
+        "steps": "Melt the chocolate and butter. Whisk eggs and sugar. Mix the chocolate mixture with flour. Bake at 200°C for 10-12 minutes.",
+        "image_path": "images/chokoladefondant.jpg"
+    },
+    {
+        "title": "Strawberry Trifle",
+        "ingredients": "300g strawberries. 200ml cream. 100g sugar. 100g biscuits.",
+        "steps": "Slice the strawberries and chop the biscuits. Whisk the cream and mix with sugar. Layer strawberries, cream, and biscuits in a glass.",
+        "image_path": "images/jordbaertrifli.jpg"
+    },
+    {
+        "title": "Coconut Macaroons",
+        "ingredients": "200g desiccated coconut. 100g sugar. 2 eggs. 1 teaspoon vanilla sugar.",
+        "steps": "Whisk eggs and sugar. Add coconut and vanilla sugar. Shape into small balls and bake at 180°C for 10-12 minutes.",
+        "image_path": "images/kokosmakroner.jpg"
+    },
+    {
+        "title": "Banana Ice Cream",
+        "ingredients": "2 bananas. 200ml cream. 100g chocolate.",
+        "steps": "Slice the bananas and freeze them. Whisk the cream and pour over the frozen bananas. Melt the chocolate and pour over. Freeze for 2 hours.",
+        "image_path": "images/bananis.jpg"
+    },
+    {
+        "title": "Pear Sorbet",
+        "ingredients": "4 pears. 200g sugar. 200ml water.",
+        "steps": "Slice the pears and boil them with sugar and water. Blend the mixture and freeze for 4 hours.",
+        "image_path": "images/paeresorbet.jpg"
+    },
+    {
+        "title": "Caramel Popcorn",
+        "ingredients": "100g popcorn. 200g sugar. 100g butter. 1 teaspoon vanilla sugar.",
+        "steps": "Make the popcorn. Melt sugar and butter together. Add popcorn and vanilla sugar. Let the caramel set.",
+        "image_path": "images/karamelpopcorn.jpg"
+    },
+    {
+        "title": "Chocolate Crepes",
+        "ingredients": "100g flour. 2 eggs. 200ml milk. 100g dark chocolate.",
+        "steps": "Make pancakes with flour, eggs, and milk. Melt the chocolate and pour over the pancakes.",
+        "image_path": "images/chokoladecrepes.jpg"
+    }
+]

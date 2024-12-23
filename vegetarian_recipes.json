@@ -1,0 +1,74 @@
+[
+    {
+        "title": "Vegetarian Lasagna",
+        "ingredients": "200g lasagna sheets. 150g ricotta cheese. 200g spinach. 300g tomato sauce. 100g mozzarella.",
+        "steps": "Layer the lasagna sheets with spinach, ricotta, and tomato sauce. Top with mozzarella and bake for 30 minutes.",
+        "image_path": "images/vegetarian_lasagna.jpg"
+    },
+    {
+        "title": "Chickpea Curry",
+        "ingredients": "200g chickpeas. 1 onion. 1 tbsp curry powder. 200ml coconut milk. 1 tbsp olive oil.",
+        "steps": "Saute the onion in olive oil. Add chickpeas and curry powder. Pour in coconut milk and simmer for 15 minutes.",
+        "image_path": "images/chickpea_curry.jpg"
+    },
+        {
+        "title": "Vegetarian Tacos",
+        "ingredients": "4 taco shells. 200g black beans. 100g corn. 50g lettuce. 50g salsa. 50g shredded cheese.",
+        "steps": "Heat the taco shells. Fill with black beans, corn, and lettuce. Top with salsa and shredded cheese.",
+        "image_path": "images/vegetarian_tacos.jpg"
+    },
+    {
+        "title": "Caprese Salad",
+        "ingredients": "200g cherry tomatoes. 150g mozzarella balls. 20g fresh basil. 2 tbsp olive oil. 1 tbsp balsamic glaze.",
+        "steps": "Slice the tomatoes and mozzarella. Arrange on a plate with basil. Drizzle with olive oil and balsamic glaze.",
+        "image_path": "images/caprese_salad.jpg"
+    },
+    {
+        "title": "Stuffed Bell Peppers",
+        "ingredients": "2 bell peppers. 100g quinoa. 100g black beans. 50g diced tomatoes. 50g shredded cheese.",
+        "steps": "Cut the bell peppers in half and remove seeds. Stuff with quinoa, beans, and tomatoes. Top with cheese and bake for 20 minutes.",
+        "image_path": "images/stuffed_bell_peppers.jpg"
+    },
+    {
+        "title": "Vegetarian Fried Rice",
+        "ingredients": "200g cooked rice. 1 carrot. 50g peas. 2 eggs. 2 tbsp soy sauce. 1 tbsp sesame oil.",
+        "steps": "Scramble the eggs. Saute carrot and peas in sesame oil. Add rice, eggs, and soy sauce, and stir-fry for 5 minutes.",
+        "image_path": "images/vegetarian_fried_rice.jpg"
+    },
+    {
+        "title": "Mushroom Stroganoff",
+        "ingredients": "200g mushrooms. 1 onion. 200ml sour cream. 200g pasta. 1 tbsp olive oil.",
+        "steps": "Saute onions and mushrooms in olive oil. Add sour cream and simmer. Serve over cooked pasta.",
+        "image_path": "images/mushroom_stroganoff.jpg"
+    },
+    {
+        "title": "Vegetable Stir-Fry",
+        "ingredients": "100g broccoli. 100g bell peppers. 50g carrots. 2 tbsp soy sauce. 1 tbsp sesame oil.",
+        "steps": "Heat sesame oil in a pan. Add broccoli, bell peppers, and carrots. Stir-fry for 5 minutes and add soy sauce.",
+        "image_path": "images/vegetable_stir_fry.jpg"
+    },
+    {
+        "title": "Spinach and Feta Quiche",
+        "ingredients": "1 pie crust. 200g spinach. 100g feta cheese. 4 eggs. 200ml milk.",
+        "steps": "Pre-bake the pie crust. Whisk eggs and milk. Add spinach and feta to the crust and pour the egg mixture on top. Bake for 30 minutes.",
+        "image_path": "images/spinach_feta_quiche.jpg"
+    },
+    {
+        "title": "Zucchini Noodles with Pesto",
+        "ingredients": "2 zucchinis. 50g pesto. 50g cherry tomatoes. 1 tbsp olive oil.",
+        "steps": "Spiralize the zucchinis. Saute in olive oil for 2 minutes. Mix with pesto and cherry tomatoes.",
+        "image_path": "images/zucchini_noodles.jpg"
+    },
+    {
+        "title": "Vegetarian Chili",
+        "ingredients": "200g kidney beans. 100g black beans. 200g diced tomatoes. 1 onion. 1 tbsp chili powder.",
+        "steps": "Saute onions in a pot. Add beans, diced tomatoes, and chili powder. Simmer for 20 minutes.",
+        "image_path": "images/vegetarian_chili.jpg"
+    },
+    {
+        "title": "Eggplant Parmesan",
+        "ingredients": "1 eggplant. 100g breadcrumbs. 100g mozzarella. 300g marinara sauce.",
+        "steps": "Slice the eggplant and coat with breadcrumbs. Bake until crispy. Layer with marinara and mozzarella and bake for another 15 minutes.",
+        "image_path": "images/eggplant_parmesan.jpg"
+    }
+]
