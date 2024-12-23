@@ -74,13 +74,13 @@ class WelcomeScreen(Screen):
 class RecipeScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.current_recipe_file = "recipes.json"  # Standardfil
+        self.current_recipe_file = "recipes.json"  # Default file
 
         self.main_layout = BoxLayout(orientation='vertical', padding=20, spacing=10)
 
-        # Label for opskriftens titel
+        # Label for the recipe title
         self.title_label = Label(
-            text="Opskrift Titel",
+            text="Recipe Title",
             font_size=36,
             bold=True,
             size_hint=(1, 0.1),
@@ -89,18 +89,18 @@ class RecipeScreen(Screen):
         )
         self.main_layout.add_widget(self.title_label)
 
-        # Image widget til billede under titlen
-        self.image_widget = Image(size_hint=(1, 0.5))  # Plads til billedet
+        # Image widget for the recipe image
+        self.image_widget = Image(size_hint=(1, 0.5))  # Space for the image
         self.main_layout.add_widget(self.image_widget)
 
-        # ScrollView til ingredienser og steps
+        # ScrollView for ingredients and steps
         self.scrollview = ScrollView(size_hint=(1, 1))
         self.content_layout = BoxLayout(orientation='horizontal', spacing=10)
         self.scrollview.add_widget(self.content_layout)
 
-        # Fremgangsmåde og ingredienser
+        # Steps and ingredients labels
         self.steps_label = Label(
-            text="Fremgangsmåde:",
+            text="Steps:",
             font_size=20,
             bold=True,
             markup=True
@@ -108,19 +108,19 @@ class RecipeScreen(Screen):
         self.content_layout.add_widget(self.steps_label)
 
         self.ingredients_label = Label(
-            text="Ingredienser:",
+            text="Ingredients:",
             font_size=20,
             bold=True,
             markup=True
         )
         self.content_layout.add_widget(self.ingredients_label)
 
-        # Tilføj scrollview til recipe_layout
+        # Add ScrollView to main layout
         self.main_layout.add_widget(self.scrollview)
 
-        # Knap til at finde en ny opskrift
+        # Button to display a new recipe
         self.new_recipe_button = Button(
-            text="Ny opskrift",
+            text="New Recipe",
             size_hint=(1, 0.1),
             background_color=(0.2, 0.6, 0.8, 1),
             font_size=20
@@ -128,56 +128,70 @@ class RecipeScreen(Screen):
         self.new_recipe_button.bind(on_press=self.display_new_recipe)
         self.main_layout.add_widget(self.new_recipe_button)
 
+        # Back button to go back to the WelcomeScreen
+        self.back_button = Button(
+            text="Back",
+            size_hint=(1, 0.1),
+            background_color=(0.8, 0.4, 0.2, 1),
+            font_size=20
+        )
+        self.back_button.bind(on_press=self.go_back)
+        self.main_layout.add_widget(self.back_button)
+
         self.add_widget(self.main_layout)
 
     def prepare_recipe(self, recipe_file=None):
-        # Brug den angivne fil, eller falder tilbage til den nuværende fil
+        # Use the given file or fall back to the current file
         if recipe_file:
             self.current_recipe_file = recipe_file
         else:
             recipe_file = self.current_recipe_file
 
-        # Skjul layoutet indtil opskriften er klar
+        # Hide layout until the recipe is ready
         self.main_layout.opacity = 0
 
-        # Hent opskrifter fra filen
+        # Get recipes from the file
         recipes = load_recipes(recipe_file)
         title, ingredients, steps, image_path = get_random_recipe(recipes)
 
-        # Opdater opskriftens data
+        # Update recipe data
         if title:
             self.title_label.text = title
         else:
             self.title_label.text = ""
 
-        # Opdater billede
+        # Update image
         if image_path:
             self.image_widget.source = image_path
         else:
             self.image_widget.source = ""
 
-        # Opdater ingredienser og fremgangsmåde
+        # Update ingredients and steps
         if ingredients:
             ingredients_list = ingredients.split(". ")
             ingredients_text = "\n".join([ingredient.strip() for ingredient in ingredients_list])
-            self.ingredients_label.text = f"[b][size=24]Ingredienser:[/size][/b]\n\n{ingredients_text}"
+            self.ingredients_label.text = f"[b][size=24]Ingredients:[/size][/b]\n\n{ingredients_text}"
         else:
             self.ingredients_label.text = ""
 
         if steps:
             steps_list = steps.split(". ")
             steps_text = "\n".join([f"Step {i + 1}: {step.strip()}" for i, step in enumerate(steps_list)])
-            self.steps_label.text = f"[b][size=24]Fremgangsmåde:[/size][/b]\n\n{steps_text}"
+            self.steps_label.text = f"[b][size=24]Steps:[/size][/b]\n\n{steps_text}"
         else:
             self.steps_label.text = ""
 
-        # Animer layoutet til at blive synligt
+        # Animate layout to become visible
         animation = Animation(opacity=1, duration=1)
         animation.start(self.main_layout)
 
     def display_new_recipe(self, instance):
-        # Brug altid den aktive opskriftsfil
+        # Always use the active recipe file
         self.prepare_recipe()
+
+    def go_back(self, instance):
+        # Switch back to the WelcomeScreen
+        self.manager.current = 'welcome'
 
 
 class RecipeApp(App):
