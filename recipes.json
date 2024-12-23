@@ -12,12 +12,6 @@
         "image_path": "images/VegetarianCurry.jpg"
     },
     {
-        "title": "Pancakes",
-        "ingredients": "200g flour. 2 eggs. 300ml milk. 1 tbsp sugar. 1 tsp vanilla extract. Butter for cooking.",
-        "steps": "Mix the flour, eggs, milk, sugar, and vanilla. Heat a non stick pan with butter. Pour the batter into the pan and cook until golden brown on both sides.",
-        "image_path": "images/pancakes.jpg"
-    },
-    {
         "title": "Grilled Cheese Sandwich",
         "ingredients": "2 slices bread. 2 slices cheese. 1 tbsp butter.",
         "steps": "Butter the bread. Place cheese between the slices of bread. Grill the sandwich in a pan until golden brown on both sides.",
