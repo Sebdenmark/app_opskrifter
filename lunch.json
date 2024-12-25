@@ -1,0 +1,62 @@
+[
+    {
+        "title": "Tuna Salad Sandwich",
+        "ingredients": "2 slices of bread. 1 can of tuna. 2 tbsp mayonnaise. 1 leaf of lettuce. 2 slices of tomato.",
+        "steps": "Mix tuna with mayonnaise. Spread the mixture on one slice of bread. Add lettuce and tomato. Top with the other slice of bread.",
+        "image_path": "images/tuna_salad_sandwich.jpg"
+    },
+    {
+        "title": "Caesar Salad Wrap",
+        "ingredients": "1 tortilla. 1 cup romaine lettuce. 50g grilled chicken. 2 tbsp Caesar dressing. 10g parmesan cheese.",
+        "steps": "Lay the tortilla flat. Add lettuce, chicken, dressing, and cheese. Roll the tortilla tightly into a wrap.",
+        "image_path": "images/caesar_salad_wrap.jpg"
+    },
+    {
+        "title": "Vegetable Stir-Fry",
+        "ingredients": "1 cup broccoli. 1 cup carrots. 1 bell pepper. 2 tbsp soy sauce. 1 tbsp sesame oil.",
+        "steps": "Heat oil in a pan. Add the vegetables and stir-fry for 5 minutes. Add soy sauce and cook for another 2 minutes.",
+        "image_path": "images/vegetable_stir_fry.jpg"
+    },
+    {
+        "title": "Chicken Pita Pocket",
+        "ingredients": "1 pita bread. 100g grilled chicken. 50g hummus. 1 cucumber. 1 tbsp tzatziki.",
+        "steps": "Cut the pita bread in half. Fill with chicken, hummus, sliced cucumber, and tzatziki.",
+        "image_path": "images/chicken_pita_pocket.jpg"
+    },
+    {
+        "title": "Avocado Toast",
+        "ingredients": "1 slice of bread. 1/2 avocado. Salt and pepper to taste. 1 egg (optional).",
+        "steps": "Toast the bread. Mash the avocado and spread it on the toast. Season with salt and pepper. Top with a fried or poached egg if desired.",
+        "image_path": "images/avocado_toast.jpg"
+    },
+    {
+        "title": "Caprese Salad",
+        "ingredients": "2 tomatoes. 100g mozzarella. Fresh basil leaves. 1 tbsp olive oil. Salt and pepper.",
+        "steps": "Slice the tomatoes and mozzarella. Arrange them on a plate with basil leaves. Drizzle with olive oil and season with salt and pepper.",
+        "image_path": "images/caprese_salad.jpg"
+    },
+    {
+        "title": "Grilled Cheese Sandwich",
+        "ingredients": "2 slices of bread. 2 slices of cheese. 1 tbsp butter.",
+        "steps": "Butter one side of each bread slice. Place cheese between the unbuttered sides. Grill in a pan until golden brown on both sides.",
+        "image_path": "images/grilled_cheese.jpg"
+    },
+    {
+        "title": "Greek Salad",
+        "ingredients": "1 cucumber. 2 tomatoes. 50g feta cheese. 10 olives. 1 tbsp olive oil. 1 tsp oregano.",
+        "steps": "Chop the cucumber and tomatoes. Mix with feta and olives. Drizzle with olive oil and sprinkle with oregano.",
+        "image_path": "images/greek_salad.jpg"
+    },
+    {
+        "title": "Chicken Caesar Salad",
+        "ingredients": "1 cup romaine lettuce. 100g grilled chicken. 2 tbsp Caesar dressing. 10g parmesan cheese. 10 croutons.",
+        "steps": "Toss lettuce, chicken, dressing, and cheese in a bowl. Top with croutons before serving.",
+        "image_path": "images/chicken_caesar_salad.jpg"
+    },
+    {
+        "title": "Vegetarian Sushi Roll",
+        "ingredients": "1 sheet of nori. 1 cup cooked sushi rice. 1/4 avocado. 1/4 cucumber. 1 carrot.",
+        "steps": "Lay the nori sheet on a mat. Spread rice evenly. Add avocado, cucumber, and carrot. Roll tightly and slice into pieces.",
+        "image_path": "images/vegetarian_sushi_roll.jpg"
+    }
+]

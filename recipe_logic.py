@@ -1,5 +1,7 @@
 import json
 import random
+import re
+
 
 shown_recipes = []
 
@@ -51,3 +53,23 @@ def get_random_recipe(recipes):
         # Hvis alle opskrifter er blevet vist, nulstil og start forfra
         shown_recipes = []
         return get_random_recipe(recipes)
+
+
+def filter_recipes_by_ingredients(recipes, selected_ingredients):
+    filtered_recipes = []
+
+    # Go through each recipe
+    for recipe in recipes:
+        recipe_ingredients = recipe['ingredients'].lower()
+
+        # Debugging output
+        print(f"Checking recipe: {recipe['title']}")
+        print(f"Recipe ingredients: {recipe_ingredients}")
+
+        # Check if each selected ingredient exists in the recipe's ingredients
+        # It will match only whole words, so "beef" won't match "beef stew"
+        if all(re.search(r'\b' + re.escape(ingredient.lower()) + r'\b', recipe_ingredients) for ingredient in selected_ingredients):
+            print(f"Selected ingredients found in: {recipe['title']}")
+            filtered_recipes.append(recipe)
+
+    return filtered_recipes
