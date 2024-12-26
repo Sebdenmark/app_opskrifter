@@ -172,6 +172,8 @@ class RecipeScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.current_recipe_file = "recipes.json"  # Default file
+        self.custom_recipes = []  # Store filtered recipes for Custom Search
+        self.in_custom_mode = False  # Flag to check if in Custom Search mode
 
         self.main_layout = BoxLayout(orientation='vertical', padding=20, spacing=10)
 
@@ -238,8 +240,8 @@ class RecipeScreen(Screen):
         self.add_widget(self.main_layout)
 
     def update_custom_recipes(self, recipes):
-        global shown_recipes
-        shown_recipes = recipes
+        self.custom_recipes = recipes
+        self.in_custom_mode = True  # Indicate Custom Search mode
 
     def prepare_recipe_from_list(self, recipes):
         if recipes:
@@ -264,17 +266,22 @@ class RecipeScreen(Screen):
         # Use the given file or fall back to the current file
         if recipe_file:
             self.current_recipe_file = recipe_file
-        else:
-            recipe_file = self.current_recipe_file
 
         # Hide layout until the recipe is ready
         self.main_layout.opacity = 0
 
         # Get recipes from the file
-        recipes = load_recipes(recipe_file)
+        recipes = load_recipes(self.current_recipe_file)
         title, ingredients, steps, image_path = get_random_recipe(recipes)
 
         # Update recipe data
+        self.update_recipe_content(title, ingredients, steps, image_path)
+
+        # Animate layout to become visible
+        animation = Animation(opacity=1, duration=1)
+        animation.start(self.main_layout)
+
+    def update_recipe_content(self, title, ingredients, steps, image_path):
         if title:
             self.title_label.text = title
         else:
@@ -301,18 +308,21 @@ class RecipeScreen(Screen):
         else:
             self.steps_label.text = ""
 
-
-
-        # Animate layout to become visible
-        animation = Animation(opacity=1, duration=1)
-        animation.start(self.main_layout)
-
     def display_new_recipe(self, instance):
-        # Always use the active recipe file
-        self.prepare_recipe()
+        # Check if we are in Custom Search mode
+        if self.in_custom_mode and self.custom_recipes:
+            title, ingredients, steps, image_path = get_random_recipe(self.custom_recipes)
+        else:
+            # Use the default recipe file
+            recipes = load_recipes(self.current_recipe_file)
+            title, ingredients, steps, image_path = get_random_recipe(recipes)
+
+        self.update_recipe_content(title, ingredients, steps, image_path)
 
     def go_back(self, instance):
-        # Switch back to the WelcomeScreen
+        # Reset custom mode and switch back to WelcomeScreen
+        self.in_custom_mode = False
+        self.custom_recipes = []
         self.manager.current = 'welcome'
 
 
