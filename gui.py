@@ -2,6 +2,7 @@ from kivy.app import App
 from kivy.uix.button import Button
 from kivy.uix.label import Label
 from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.relativelayout import RelativeLayout
 from kivy.uix.scrollview import ScrollView
 from kivy.uix.image import Image
 from kivy.uix.screenmanager import ScreenManager, Screen
@@ -205,7 +206,22 @@ class RecipeScreen(Screen):
         self.current_recipe_file = "recipes.json"
         self.custom_recipes = []  # Store filtered recipes for Custom Search
         self.in_custom_mode = False  # Flag to check if in Custom Search mode
-        self.main_layout = BoxLayout(orientation='vertical', padding=20, spacing=10)
+
+        # Main layout as a RelativeLayout to layer widgets
+        self.main_layout = RelativeLayout()
+
+        # Background image
+        self.background_image = Image(
+            source="images/opskriftbaggrund.jpg",  # Replace with your image filename
+            allow_stretch=True,
+            keep_ratio=False,
+            size_hint=(1, 1),
+            pos_hint={"center_x": 0.5, "center_y": 0.5}
+        )
+        self.main_layout.add_widget(self.background_image)
+
+        # Foreground layout for other content
+        self.foreground_layout = BoxLayout(orientation='vertical', padding=20, spacing=10)
 
         # Label for the recipe title
         self.title_label = Label(
@@ -214,13 +230,15 @@ class RecipeScreen(Screen):
             bold=True,
             size_hint=(1, 0.1),
             halign='center',
-            valign='middle'
+            valign='middle',
+            color=(0.3, 0.15, 0.05, 1),
+            font_name='txtstyle/OriginalSurfer-Regular.ttf'
         )
-        self.main_layout.add_widget(self.title_label)
+        self.foreground_layout.add_widget(self.title_label)
 
         # Image widget for the recipe image
         self.image_widget = Image(size_hint=(1, 0.5))  # Space for the image
-        self.main_layout.add_widget(self.image_widget)
+        self.foreground_layout.add_widget(self.image_widget)
 
         # ScrollView for ingredients and steps
         self.scrollview = ScrollView(size_hint=(1, 1))
@@ -230,39 +248,56 @@ class RecipeScreen(Screen):
         # Steps and ingredients labels
         self.steps_label = Label(
             text="Steps:",
-            font_size=20,
+            font_size=30,
             bold=True,
-            markup=True
+            markup=True,
+            color=(0.3, 0.15, 0.05, 1),
+            font_name='txtstyle/OriginalSurfer-Regular.ttf'
+
         )
         self.content_layout.add_widget(self.steps_label)
 
         self.ingredients_label = Label(
             text="Ingredients:",
-            font_size=20,
+            font_size=30,
             bold=True,
-            markup=True
+            markup=True,
+            color=(0.3, 0.15, 0.05, 1),
+            font_name='txtstyle/OriginalSurfer-Regular.ttf'
         )
         self.content_layout.add_widget(self.ingredients_label)
-        # Add ScrollView to main layout
-        self.main_layout.add_widget(self.scrollview)
+
+        # Add ScrollView to foreground layout
+        self.foreground_layout.add_widget(self.scrollview)
+
         # Button to display a new recipe
         self.new_recipe_button = Button(
             text="New Recipe",
+            bold=True,
             size_hint=(1, 0.1),
-            background_color=(0.2, 0.6, 0.8, 1),
-            font_size=20
+            background_color=(0.8, 0.85, 1, 1),
+            font_size=30,
+            color=(0.3, 0.15, 0.05, 1),
+            font_name='txtstyle/OriginalSurfer-Regular.ttf'
         )
         self.new_recipe_button.bind(on_press=self.display_new_recipe)
-        self.main_layout.add_widget(self.new_recipe_button)
+        self.foreground_layout.add_widget(self.new_recipe_button)
+
         # Back button to go back to the WelcomeScreen
         self.back_button = Button(
             text="Back",
+            bold=True,
             size_hint=(1, 0.1),
-            background_color=(0.8, 0.4, 0.2, 1),
-            font_size=20
+            background_color=(1, 0.75, 0.65, 1),
+            font_size=30,
+            color=(0.3, 0.15, 0.05, 1),
+            font_name='txtstyle/OriginalSurfer-Regular.ttf'
         )
         self.back_button.bind(on_press=self.go_back)
-        self.main_layout.add_widget(self.back_button)
+        self.foreground_layout.add_widget(self.back_button)
+
+        # Add foreground layout on top of the background
+        self.main_layout.add_widget(self.foreground_layout)
 
         self.add_widget(self.main_layout)
 
