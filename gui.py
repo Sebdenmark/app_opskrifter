@@ -7,72 +7,108 @@ from kivy.uix.image import Image
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.animation import Animation
 from recipe_logic import load_recipes, get_random_recipe, filter_recipes_by_ingredients
+from kivy.graphics import Color, Rectangle, RoundedRectangle
+from kivy.uix.stencilview import StencilView
+
 
 class WelcomeScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
-        self.main_layout = BoxLayout(orientation='vertical', padding=20, spacing=20)
+        # Add a background image
+        self.background = Image(
+            source='images/backgroundfrontpage.jpg',
+            allow_stretch=True,
+            keep_ratio=False
+        )
+        self.add_widget(self.background)
+
+        # Main layout on top of the background
+        self.main_layout = BoxLayout(orientation='vertical', padding=120, spacing=20)
+
+        # Create a container for the welcome text
+        welcome_container = BoxLayout(size_hint=(1, 0.4), padding=20, spacing=10)
+        with welcome_container.canvas.before:
+            Color(1, 1, 1, 0.7)  # Semi-transparent white background
+            self.rect = Rectangle(size=welcome_container.size, pos=welcome_container.pos)
+        welcome_container.bind(size=self._update_rect, pos=self._update_rect)
 
         # Label for forsiden
         self.welcome_label = Label(
-            text="Hej! Hvad vil du lave i dag?\nVælg mellem almindelige og vegetariske opskrifter.",
-            font_size=24,
+            text="Hej! Hvad vil du lave i dag?\nVælg mellem almindelige og vegetariske opskrifter.\nEller vælg custom og få en opskrift der indenholder en eller flere af de ingredientser du har lyst til i dag.",
+            bold=True,
+            font_size=30,
             halign='center',
             valign='middle',
-            size_hint=(1, 0.4)
+            color=(0.3, 0.15, 0.05, 1),
+            font_name='txtstyle/OriginalSurfer-Regular.ttf'  # Path to your font file
         )
-        self.main_layout.add_widget(self.welcome_label)
+        welcome_container.add_widget(self.welcome_label)
+        self.main_layout.add_widget(welcome_container)
 
-        # Knap til almindelige opskrifter
+        # Add buttons (unchanged)
         self.button_regular = Button(
             text="Dinner",
+            bold=True,
             size_hint=(0.8, 0.15),
             pos_hint={"center_x": 0.5},
             background_normal='',
-            background_color=(0.2, 0.6, 0.8, 1),
-            font_size=20
+            background_color=(0.8, 0.85, 1, 1),
+            font_size=30,
+            color=(0.3, 0.15, 0.05, 1),
+            font_name='txtstyle/OriginalSurfer-Regular.ttf'
         )
         self.button_regular.bind(on_press=self.go_to_recipe_regular)
         self.main_layout.add_widget(self.button_regular)
 
-        # Knap til vegetariske opskrifter
         self.button_vegetarian = Button(
             text="Vegan recipes",
+            bold=True,
             size_hint=(0.8, 0.15),
             pos_hint={"center_x": 0.5},
             background_normal='',
-            background_color=(0.2, 0.8, 0.4, 1),
-            font_size=20
+            background_color=(1, 0.85, 0.7, 1),
+            font_size=30,
+            color=(0.3, 0.15, 0.05, 1),
+            font_name='txtstyle/OriginalSurfer-Regular.ttf'
+
         )
         self.button_vegetarian.bind(on_press=self.go_to_recipe_vegetarian)
         self.main_layout.add_widget(self.button_vegetarian)
 
-        # Knap til frokostopskrifter
         self.button_lunch = Button(
             text="Lunch",
+            bold=True,
             size_hint=(0.8, 0.15),
             pos_hint={"center_x": 0.5},
             background_normal='',
-            background_color=(0.8, 0.4, 0.2, 1),
-            font_size=20
+            background_color=(0.85, 1, 0.75, 1),
+            font_size=30,
+            color=(0.3, 0.15, 0.05, 1),
+            font_name='txtstyle/OriginalSurfer-Regular.ttf'
         )
         self.button_lunch.bind(on_press=self.go_to_recipe_lunch)
         self.main_layout.add_widget(self.button_lunch)
 
-        # Knap til brugerdefineret søgning
         self.button_custom = Button(
             text="Custom Search",
+            bold=True,
             size_hint=(0.8, 0.15),
             pos_hint={"center_x": 0.5},
             background_normal='',
-            background_color=(0.5, 0.3, 0.8, 1),
-            font_size=20
+            background_color=(1, 0.75, 0.65, 1),
+            font_size=30,
+            color=(0.3, 0.15, 0.05, 1),
+            font_name='txtstyle/OriginalSurfer-Regular.ttf'
         )
         self.button_custom.bind(on_press=self.go_to_custom_search)
         self.main_layout.add_widget(self.button_custom)
 
         self.add_widget(self.main_layout)
+
+    def _update_rect(self, instance, value):
+        self.rect.size = instance.size
+        self.rect.pos = instance.pos
 
     def go_to_recipe_regular(self, instance):
         self.manager.current = 'recipe'
@@ -95,12 +131,11 @@ class WelcomeScreen(Screen):
 class CustomSearchScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-
         self.selected_ingredients = []
         self.main_layout = BoxLayout(orientation='vertical', padding=20, spacing=10)
 
         # Add checkboxes for ingredient selection
-        self.ingredient_options = ["beef", "carrots", "potatoes", "pasta",]
+        self.ingredient_options = ["beef", "carrots", "potatoes", "pasta", "cheese", "chicken", "rice", "shrimp"]
         self.checkboxes = {}
         for ingredient in self.ingredient_options:
             checkbox = Button(
@@ -131,7 +166,6 @@ class CustomSearchScreen(Screen):
         )
         self.back_button.bind(on_press=self.go_back)
         self.main_layout.add_widget(self.back_button)
-
         self.add_widget(self.main_layout)
 
     def toggle_ingredient(self, instance):
@@ -149,20 +183,17 @@ class CustomSearchScreen(Screen):
         recipes.extend(load_recipes("recipes.json"))
         recipes.extend(load_recipes("lunch.json"))
         recipes.extend(load_recipes("vegetarian_recipes.json"))
-
-        print(f"Selected ingredients: {self.selected_ingredients}")  # Debugging
+ # Debugging
         filtered_recipes = filter_recipes_by_ingredients(recipes, self.selected_ingredients)
 
         if not filtered_recipes:
-            self.manager.get_screen("recipe").title_label.text = "No recipes found!"
+            self.manager.get_screen("recipe").title_label.text = "No recipes found, press new recipe to get some random recipes for inspiration!"
         else:
             # Pass filtered recipes to the RecipeScreen and display the first recipe
             recipe_screen = self.manager.get_screen("recipe")
             recipe_screen.update_custom_recipes(filtered_recipes)
-
             # Set the first recipe from the filtered list
             recipe_screen.prepare_recipe_from_list(filtered_recipes)
-
         # Switch to the recipe screen
         self.manager.current = 'recipe'
 
@@ -171,10 +202,9 @@ class CustomSearchScreen(Screen):
 class RecipeScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.current_recipe_file = "recipes.json"  # Default file
+        self.current_recipe_file = "recipes.json"
         self.custom_recipes = []  # Store filtered recipes for Custom Search
         self.in_custom_mode = False  # Flag to check if in Custom Search mode
-
         self.main_layout = BoxLayout(orientation='vertical', padding=20, spacing=10)
 
         # Label for the recipe title
@@ -213,10 +243,8 @@ class RecipeScreen(Screen):
             markup=True
         )
         self.content_layout.add_widget(self.ingredients_label)
-
         # Add ScrollView to main layout
         self.main_layout.add_widget(self.scrollview)
-
         # Button to display a new recipe
         self.new_recipe_button = Button(
             text="New Recipe",
@@ -226,7 +254,6 @@ class RecipeScreen(Screen):
         )
         self.new_recipe_button.bind(on_press=self.display_new_recipe)
         self.main_layout.add_widget(self.new_recipe_button)
-
         # Back button to go back to the WelcomeScreen
         self.back_button = Button(
             text="Back",
@@ -266,17 +293,13 @@ class RecipeScreen(Screen):
         # Use the given file or fall back to the current file
         if recipe_file:
             self.current_recipe_file = recipe_file
-
         # Hide layout until the recipe is ready
         self.main_layout.opacity = 0
-
         # Get recipes from the file
         recipes = load_recipes(self.current_recipe_file)
         title, ingredients, steps, image_path = get_random_recipe(recipes)
-
         # Update recipe data
         self.update_recipe_content(title, ingredients, steps, image_path)
-
         # Animate layout to become visible
         animation = Animation(opacity=1, duration=1)
         animation.start(self.main_layout)
@@ -286,7 +309,6 @@ class RecipeScreen(Screen):
             self.title_label.text = title
         else:
             self.title_label.text = ""
-
         # Update image
         if image_path:
             self.image_widget.source = image_path
@@ -325,11 +347,9 @@ class RecipeScreen(Screen):
         self.custom_recipes = []
         self.manager.current = 'welcome'
 
-
 class RecipeApp(App):
     def build(self):
         screen_manager = ScreenManager()
-
         # Add screens
         screen_manager.add_widget(WelcomeScreen(name='welcome'))
         screen_manager.add_widget(RecipeScreen(name='recipe'))
