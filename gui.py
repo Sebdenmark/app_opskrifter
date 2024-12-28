@@ -100,7 +100,7 @@ class CustomSearchScreen(Screen):
         self.main_layout = BoxLayout(orientation='vertical', padding=20, spacing=10)
 
         # Add checkboxes for ingredient selection
-        self.ingredient_options = ["beef", "carrots", "potatoes"]
+        self.ingredient_options = ["beef", "carrots", "potatoes", "pasta",]
         self.checkboxes = {}
         for ingredient in self.ingredient_options:
             checkbox = Button(

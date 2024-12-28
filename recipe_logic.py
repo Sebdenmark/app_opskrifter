@@ -72,4 +72,7 @@ def filter_recipes_by_ingredients(recipes, selected_ingredients):
             print(f"Selected ingredients found in: {recipe['title']}")
             filtered_recipes.append(recipe)
 
+    # Shuffle the filtered recipes to display them in random order
+    random.shuffle(filtered_recipes)
+
     return filtered_recipes
