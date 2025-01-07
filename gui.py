@@ -236,19 +236,19 @@ class RecipeScreen(Screen):
         )
         self.foreground_layout.add_widget(self.title_label)
 
-        # Image widget for the recipe image
-        self.image_widget = Image(size_hint=(1, 0.5))  # Space for the image
+        self.image_widget = Image(size_hint=(1, 1), width=600, height=600)  # Angiv fast bredde og højde
         self.foreground_layout.add_widget(self.image_widget)
 
-        # ScrollView for ingredients and steps
-        self.scrollview = ScrollView(size_hint=(1, 1))
-        self.content_layout = BoxLayout(orientation='horizontal', spacing=10)
+        # ScrollView for ingredienser og trin
+        self.scrollview = ScrollView(size_hint=(0.95, 0.95))
+        self.content_layout = BoxLayout(orientation='horizontal', spacing=5,
+                                        padding=[10, 10, 10, 10])  # Juster spacing og padding
         self.scrollview.add_widget(self.content_layout)
 
         # Steps and ingredients labels
         self.steps_label = Label(
             text="Steps:",
-            font_size=30,
+            font_size=27,
             bold=True,
             markup=True,
             color=(0.3, 0.15, 0.05, 1),
@@ -259,7 +259,7 @@ class RecipeScreen(Screen):
 
         self.ingredients_label = Label(
             text="Ingredients:",
-            font_size=30,
+            font_size=27,
             bold=True,
             markup=True,
             color=(0.3, 0.15, 0.05, 1),

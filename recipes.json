@@ -8,7 +8,7 @@
     {
         "title": "Vegetarian Curry",
         "ingredients": "200g mixed vegetables carrots, peas, potatoes. 1 can coconut milk 400ml. 1 tbsp curry powder. 1 tbsp olive oil.",
-        "steps": "Chop the vegetables. Saute them with curry powder in olive oil for 5 minutes. Add coconut milk and let it simmer for 15 minutes.",
+        "steps": "Chop the vegetables. Saute them with curry powder in olive oil for 5 minutes. Add coconut milk. Let it simmer for 15 minutes.",
         "image_path": "images/VegetarianCurry.jpg"
     },
     {
@@ -32,7 +32,7 @@
     {
         "title": "Chicken Stir Fry",
         "ingredients": "300g chicken breast. 1 bell pepper. 1 onion. 2 tbsp soy sauce. 1 tbsp olive oil.",
-        "steps": "Chop the chicken and vegetables. Stirfry the chicken in olive oil. Add the vegetables and soy sauce, then cook until tender.",
+        "steps": "Chop the chicken and vegetables. Stirfry the chicken in olive oil. Add the vegetables and soy sauce. Cook until tender.",
         "image_path": "images/chicken_stir_fry.jpg"
     },
     {
@@ -44,7 +44,7 @@
     {
         "title": "Mac and Cheese",
         "ingredients": "200g macaroni pasta. 150g cheddar cheese. 250ml milk. 1 tbsp butter. 1 tbsp flour.",
-        "steps": "Cook the macaroni. In a pan, melt the butter, add flour, then gradually add the milk to make a sauce. Stir in the cheese until melted. Combine with the macaroni.",
+        "steps": "Cook the macaroni. In a pan, melt the butter. Add flour. Gradually add the milk to make a sauce. Stir in the cheese until melted. Combine with the macaroni.",
         "image_path": "images/mac_and_cheese.jpg"
     },
     {
@@ -56,7 +56,7 @@
     {
         "title": "Egg Fried Rice",
         "ingredients": "200g rice. 2 eggs. 2 tbsp soy sauce. 1 tbsp sesame oil. 1 onion.",
-        "steps": "Cook the rice. Scramble the eggs in a pan. Stir fry the chopped onion in sesame oil. Add the rice, eggs, and soy sauce, and stir until heated through.",
+        "steps": "Cook the rice. Scramble the eggs in a pan. Stir fry the chopped onion in sesame oil. Add the rice, eggs, and soy sauce. Stir until heated through.",
         "image_path": "images/egg_fried_rice.jpg"
     },
     {
@@ -68,7 +68,7 @@
     {
         "title": "Vegetable Soup",
         "ingredients": "200g mixed vegetables (carrots, potatoes, peas). 500ml vegetable stock. 1 onion. 1 tbsp olive oil.",
-        "steps": "Chop the vegetables and onion. Saute the onion in olive oil, then add the vegetables and stock. Simmer for 20 minutes.",
+        "steps": "Chop the vegetables and onion. Saute the onion in olive oil. Add the vegetables and stock. Simmer for 20 minutes.",
         "image_path": "images/vegetable_soup.jpg"
     },
     {
@@ -80,19 +80,19 @@
     {
         "title": "Shrimp Pasta",
         "ingredients": "200g pasta. 200g shrimp. 1 garlic clove. 1 tbsp olive oil. 100ml cream.",
-        "steps": "Cook the pasta. Saute the shrimp and garlic in olive oil. Add the cream and cooked pasta, and mix everything together.",
+        "steps": "Cook the pasta. Saute the shrimp and garlic in olive oil. Add the cream and cooked pasta. Mix everything together.",
         "image_path": "images/shrimp_pasta.jpg"
     },
     {
         "title": "Fish and Chips",
         "ingredients": "2 fish fillets. 2 large potatoes. 1 tbsp flour. 1 egg. 1 tbsp olive oil.",
-        "steps": "Cut the potatoes into fries and bake. Coat the fish fillets in flour, dip in beaten egg, and fry until crispy. Serve with the fries.",
+        "steps": "Cut the potatoes into fries and bake. Coat the fish fillets in flour, dip in beaten egg. fry until crispy. Serve with the fries.",
         "image_path": "images/fish_and_chips.jpg"
     },
     {
         "title": "Cheese Quesadilla",
         "ingredients": "2 tortillas. 100g cheese. 1 tbsp butter.",
-        "steps": "Place the cheese between the tortillas. Heat a pan with butter and cook the quesadilla on both sides until golden brown.",
+        "steps": "Place the cheese between the tortillas. Heat a pan with butter. Cook the quesadilla on both sides until golden brown.",
         "image_path": "images/cheese_quesadilla.jpg"
     },
     {
