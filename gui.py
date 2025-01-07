@@ -242,13 +242,13 @@ class RecipeScreen(Screen):
         # ScrollView for ingredienser og trin
         self.scrollview = ScrollView(size_hint=(0.95, 0.95))
         self.content_layout = BoxLayout(orientation='horizontal', spacing=5,
-                                        padding=[10, 10, 10, 10])  # Juster spacing og padding
+                                        padding=[200, 10, 50, 50])  # Juster spacing og padding
         self.scrollview.add_widget(self.content_layout)
 
         # Steps and ingredients labels
         self.steps_label = Label(
             text="Steps:",
-            font_size=27,
+            font_size=26,
             bold=True,
             markup=True,
             color=(0.3, 0.15, 0.05, 1),
@@ -259,7 +259,7 @@ class RecipeScreen(Screen):
 
         self.ingredients_label = Label(
             text="Ingredients:",
-            font_size=27,
+            font_size=26,
             bold=True,
             markup=True,
             color=(0.3, 0.15, 0.05, 1),
@@ -270,14 +270,14 @@ class RecipeScreen(Screen):
         # Add ScrollView to foreground layout
         self.foreground_layout.add_widget(self.scrollview)
 
-        # Button to display a new recipe
+        # New Recipe button
         self.new_recipe_button = Button(
             text="New Recipe",
             bold=True,
             size_hint=(1, 0.1),
-            background_color=(0.8, 0.85, 1, 1),
+            background_color=(0.8, 1, 0.8, 1),  # Soft pastel green, brighter
             font_size=30,
-            color=(0.3, 0.15, 0.05, 1),
+            color=(0.2, 0.6, 0.2, 1),  # Darker green
             font_name='txtstyle/OriginalSurfer-Regular.ttf'
         )
         self.new_recipe_button.bind(on_press=self.display_new_recipe)
@@ -288,9 +288,9 @@ class RecipeScreen(Screen):
             text="Back",
             bold=True,
             size_hint=(1, 0.1),
-            background_color=(1, 0.75, 0.65, 1),
+            background_color=(0.6, 0.8, 1, 1),  # Soft pastel blue, muted
             font_size=30,
-            color=(0.3, 0.15, 0.05, 1),
+            color=(0.1, 0.4, 0.7, 1),  # Darker blue
             font_name='txtstyle/OriginalSurfer-Regular.ttf'
         )
         self.back_button.bind(on_press=self.go_back)
