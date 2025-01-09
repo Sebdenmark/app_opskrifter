@@ -156,16 +156,22 @@ class CustomSearchScreen(Screen):
         self.layout.add_widget(self.background_image)
 
         # Create main layout for buttons
-        self.main_layout = BoxLayout(orientation='vertical', padding=20, spacing=10, size_hint=(1, 1))
+        self.main_layout = BoxLayout(orientation='vertical', padding=140, spacing=15, size_hint=(1, 1.1))
 
         # Add checkboxes for ingredient selection
         self.ingredient_options = ["beef", "carrots", "potatoes", "pasta", "cheese", "chicken", "rice", "shrimp"]
         self.checkboxes = {}
+
+
         for ingredient in self.ingredient_options:
             checkbox = Button(
                 text=ingredient,
                 size_hint=(1, 0.1),
-                background_color=(0.8, 0.8, 0.8, 1),
+                background_normal='',
+                background_color=(0.8, 0.85, 1, 1),
+                color=(0.3, 0.15, 0.05, 1),
+                font_size=30,
+                font_name='txtstyle/OriginalSurfer-Regular.ttf',
                 on_press=self.toggle_ingredient
             )
             self.checkboxes[ingredient] = checkbox
