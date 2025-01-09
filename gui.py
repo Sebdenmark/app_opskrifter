@@ -14,6 +14,15 @@ from kivy.uix.stencilview import StencilView
 
 
 class WelcomeScreen(Screen):
+    def _update_rect(self, instance, value):
+        self.rect.size = instance.size
+        self.rect.pos = instance.pos
+
+        # Update the text_size of the label
+
+    def _update_label_text_size(self, instance, value):
+        self.welcome_label.text_size = (instance.width - 40, instance.height - 40)  # Subtract padding
+
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
@@ -45,6 +54,7 @@ class WelcomeScreen(Screen):
             color=(0.3, 0.15, 0.05, 1),
             font_name='txtstyle/OriginalSurfer-Regular.ttf'  # Path to your font file
         )
+        welcome_container.bind(size=self._update_label_text_size)
         welcome_container.add_widget(self.welcome_label)
         self.main_layout.add_widget(welcome_container)
 
