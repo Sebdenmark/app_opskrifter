@@ -18,10 +18,8 @@ class WelcomeScreen(Screen):
         self.rect.size = instance.size
         self.rect.pos = instance.pos
 
-        # Update the text_size of the label
-
     def _update_label_text_size(self, instance, value):
-        self.welcome_label.text_size = (instance.width - 40, instance.height - 40)  # Subtract padding
+        self.welcome_label.text_size = (instance.width - 40, instance.height - 40)
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -40,7 +38,7 @@ class WelcomeScreen(Screen):
         # Create a container for the welcome text
         welcome_container = BoxLayout(size_hint=(1, 0.4), padding=20, spacing=10)
         with welcome_container.canvas.before:
-            Color(1, 1, 1, 0.7)  # Semi-transparent white background
+            Color(1, 1, 1, 0.7)
             self.rect = Rectangle(size=welcome_container.size, pos=welcome_container.pos)
         welcome_container.bind(size=self._update_rect, pos=self._update_rect)
 
@@ -52,7 +50,7 @@ class WelcomeScreen(Screen):
             halign='center',
             valign='middle',
             color=(0.3, 0.15, 0.05, 1),
-            font_name='txtstyle/OriginalSurfer-Regular.ttf'  # Path to your font file
+            font_name='txtstyle/OriginalSurfer-Regular.ttf'
         )
         welcome_container.bind(size=self._update_label_text_size)
         welcome_container.add_widget(self.welcome_label)
@@ -181,7 +179,7 @@ class CustomSearchScreen(Screen):
         self.search_button = Button(
             text="Find Recipes",
             size_hint=(1, 0.1),
-            background_color=(0.8, 1, 0.8, 1),  # Soft pastel green, brighter
+            background_color=(0.8, 1, 0.8, 1),
             font_size=30,
             font_name='txtstyle/OriginalSurfer-Regular.ttf',
             color=(0.2, 0.6, 0.2, 1),
@@ -193,7 +191,7 @@ class CustomSearchScreen(Screen):
         self.back_button = Button(
             text="Back",
             size_hint=(1, 0.1),
-            background_color=(0.6, 0.8, 1, 1),  # Soft pastel blue, muted
+            background_color=(0.6, 0.8, 1, 1),
             font_size=30,
             font_name='txtstyle/OriginalSurfer-Regular.ttf',
             color=(0.1, 0.4, 0.7, 1),
@@ -209,10 +207,10 @@ class CustomSearchScreen(Screen):
         ingredient = instance.text
         if ingredient in self.selected_ingredients:
             self.selected_ingredients.remove(ingredient)
-            instance.background_color = (0.8, 0.85, 1, 1)  # Gray color
+            instance.background_color = (0.8, 0.85, 1, 1)
         else:
             self.selected_ingredients.append(ingredient)
-            instance.background_color = (0.2, 0.8, 0.4, 1)  # Green color
+            instance.background_color = (0.2, 0.8, 0.4, 1)
 
     def find_recipes(self, instance):
         # Load all three recipe files
@@ -240,15 +238,15 @@ class RecipeScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.current_recipe_file = "recipes.json"
-        self.custom_recipes = []  # Store filtered recipes for Custom Search
-        self.in_custom_mode = False  # Flag to check if in Custom Search mode
+        self.custom_recipes = []
+        self.in_custom_mode = False
 
         # Main layout as a RelativeLayout to layer widgets
         self.main_layout = RelativeLayout()
 
         # Background image
         self.background_image = Image(
-            source="images/opskriftbaggrund.jpg",  # Replace with your image filename
+            source="images/opskriftbaggrund.jpg",
             allow_stretch=True,
             keep_ratio=False,
             size_hint=(1, 1),
@@ -272,13 +270,13 @@ class RecipeScreen(Screen):
         )
         self.foreground_layout.add_widget(self.title_label)
 
-        self.image_widget = Image(size_hint=(1, 1), width=600, height=600)  # Angiv fast bredde og højde
+        self.image_widget = Image(size_hint=(1, 1), width=600, height=600)
         self.foreground_layout.add_widget(self.image_widget)
 
         # ScrollView for ingredienser og trin
         self.scrollview = ScrollView(size_hint=(0.95, 0.95))
         self.content_layout = BoxLayout(orientation='horizontal', spacing=5,
-                                        padding=[200, 10, 50, 50])  # Juster spacing og padding
+                                        padding=[200, 10, 50, 50])
         self.scrollview.add_widget(self.content_layout)
 
         # Steps and ingredients labels
@@ -311,9 +309,9 @@ class RecipeScreen(Screen):
             text="New Recipe",
             bold=True,
             size_hint=(1, 0.1),
-            background_color=(0.8, 1, 0.8, 1),  # Soft pastel green, brighter
+            background_color=(0.8, 1, 0.8, 1),
             font_size=30,
-            color=(0.2, 0.6, 0.2, 1),  # Darker green
+            color=(0.2, 0.6, 0.2, 1),
             font_name='txtstyle/OriginalSurfer-Regular.ttf'
         )
         self.new_recipe_button.bind(on_press=self.display_new_recipe)
@@ -324,9 +322,9 @@ class RecipeScreen(Screen):
             text="Back",
             bold=True,
             size_hint=(1, 0.1),
-            background_color=(0.6, 0.8, 1, 1),  # Soft pastel blue, muted
+            background_color=(0.6, 0.8, 1, 1),
             font_size=30,
-            color=(0.1, 0.4, 0.7, 1),  # Darker blue
+            color=(0.1, 0.4, 0.7, 1),
             font_name='txtstyle/OriginalSurfer-Regular.ttf'
         )
         self.back_button.bind(on_press=self.go_back)
@@ -339,7 +337,7 @@ class RecipeScreen(Screen):
 
     def update_custom_recipes(self, recipes):
         self.custom_recipes = recipes
-        self.in_custom_mode = True  # Indicate Custom Search mode
+        self.in_custom_mode = True
 
     def prepare_recipe_from_list(self, recipes):
         if recipes:

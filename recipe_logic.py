@@ -16,18 +16,6 @@ def load_recipes(file_path):
         print("Der opstod en fejl under indlæsning af opskrifter!")
         return []
 
-def load_vegetarian_recipes(file_path):
-    try:
-        with open(file_path, "r") as file:
-            recipes = json.load(file)
-        return recipes
-    except FileNotFoundError:
-        print("Vegetar-opskriftsfilen blev ikke fundet!")
-        return []
-    except json.JSONDecodeError:
-        print("Der opstod en fejl under indlæsning af vegetar-opskrifter!")
-        return []
-
 def get_random_recipe(recipes):
     global shown_recipes
 
