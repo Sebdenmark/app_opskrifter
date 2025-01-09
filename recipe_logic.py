@@ -21,19 +21,17 @@ def get_random_recipe(recipes):
 
     if not recipes:
         return "", "", "", ""
-    # Hvis der ikke er opskrifter tilbage, nulstil shown_recipes og vælg en opskrift fra hele listen
+
     if len(shown_recipes) == len(recipes):
         shown_recipes = []
-    # Find en opskrift, der ikke er blevet vist før
+
     remaining_recipes = [recipe for recipe in recipes if recipe not in shown_recipes]
-    # Hvis der er opskrifter, der ikke er blevet vist, vælg en tilfældigt
+
     if remaining_recipes:
         recipe = random.choice(remaining_recipes)
         shown_recipes.append(recipe)
-        # Returner opskriftens data
         return recipe.get('title', ""), recipe.get('ingredients', ""), recipe.get('steps', ""), recipe.get('image_path', "")
     else:
-        # Hvis alle opskrifter er blevet vist, nulstil og start forfra
         shown_recipes = []
         return get_random_recipe(recipes)
 
@@ -42,11 +40,8 @@ def filter_recipes_by_ingredients(recipes, selected_ingredients):
     # Go through each recipe
     for recipe in recipes:
         recipe_ingredients = recipe['ingredients'].lower()
-        # Check if each selected ingredient exists in the recipe's ingredients
-        # It will match only whole words, so "beef" won't match "beef stew"
         if all(re.search(r'\b' + re.escape(ingredient.lower()) + r'\b', recipe_ingredients) for ingredient in selected_ingredients):
             filtered_recipes.append(recipe)
-    # Shuffle the filtered recipes to display them in random order
     random.shuffle(filtered_recipes)
 
     return filtered_recipes
