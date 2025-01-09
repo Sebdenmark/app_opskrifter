@@ -157,7 +157,7 @@
     },
     {
         "title": "Spaghetti Aglio e Olio",
-        "ingredients": "200g spaghetti. 2 cloves garlic. 1 tbsp olive oil. Red pepper flakes.",
+        "ingredients": "200g spaghetti or pasta. 2 cloves garlic. 1 tbsp olive oil. Red pepper flakes.",
         "steps": "Cook the spaghetti. Saute the garlic in olive oil. Toss the spaghetti with garlic and red pepper flakes.",
         "image_path": "images/spaghetti_aglio_olio.jpg"
     },
@@ -186,18 +186,6 @@
         "image_path": "images/chicken_parmesan.jpg"
     },
     {
-        "title": "Garlic Bread",
-        "ingredients": "1 baguette. 2 cloves garlic. 50g butter.",
-        "steps": "Mix crushed garlic with butter. Spread on the baguette and bake at 180°C for 10 minutes.",
-        "image_path": "images/garlic_bread.jpg"
-    },
-    {
-        "title": "Baked Potatoes",
-        "ingredients": "4 potatoes. 1 tbsp olive oil. Salt and pepper.",
-        "steps": "Rub the potatoes with olive oil, salt, and pepper. Bake at 200°C for 45 minutes.",
-        "image_path": "images/baked_potatoes.jpg"
-    },
-    {
         "title": "Beef Tostadas",
         "ingredients": "250g minced beef. 4 tostada shells. 100g shredded lettuce. 50g cheese.",
         "steps": "Cook the beef with seasonings. Fill the tostada shells with beef, lettuce, and cheese.",
@@ -208,17 +196,5 @@
         "ingredients": "4 eggs. 100g mixed vegetables. 50g cheese. Salt and pepper.",
         "steps": "Whisk the eggs and mix with vegetables and cheese. Pour into a pan and cook until set.",
         "image_path": "images/frittata.jpg"
-    },
-    {
-        "title": "Corn on the Cob",
-        "ingredients": "4 ears of corn. 1 tbsp butter. Salt.",
-        "steps": "Boil the corn for 10 minutes. Butter and salt before serving.",
-        "image_path": "images/corn_on_the_cob.jpg"
-    },
-    {
-        "title": "Fried Rice",
-        "ingredients": "200g rice. 2 eggs. 1 onion. 2 tbsp soy sauce.",
-        "steps": "Scramble the eggs and stir fry the onion. Add the rice and soy sauce. Stir until heated through.",
-        "image_path": "images/fried_rice.jpg"
     }
 ]
