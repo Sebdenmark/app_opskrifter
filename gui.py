@@ -159,7 +159,7 @@ class CustomSearchScreen(Screen):
         self.main_layout = BoxLayout(orientation='vertical', padding=140, spacing=15, size_hint=(1, 1.1))
 
         # Add checkboxes for ingredient selection
-        self.ingredient_options = ["beef", "carrots", "potatoes", "pasta", "cheese", "chicken", "rice", "shrimp"]
+        self.ingredient_options = ["Beef", "Potatoes", "Pasta", "Cheese", "Chicken", "Rice", "Shrimp", "Eggs", "Salmon", "Tuna"]
         self.checkboxes = {}
 
 
@@ -182,7 +182,8 @@ class CustomSearchScreen(Screen):
             text="Find Recipes",
             size_hint=(1, 0.1),
             background_color=(0.8, 1, 0.8, 1),  # Soft pastel green, brighter
-            font_size=20,
+            font_size=30,
+            font_name='txtstyle/OriginalSurfer-Regular.ttf',
             color=(0.2, 0.6, 0.2, 1),
         )
         self.search_button.bind(on_press=self.find_recipes)
@@ -193,7 +194,8 @@ class CustomSearchScreen(Screen):
             text="Back",
             size_hint=(1, 0.1),
             background_color=(0.6, 0.8, 1, 1),  # Soft pastel blue, muted
-            font_size=20,
+            font_size=30,
+            font_name='txtstyle/OriginalSurfer-Regular.ttf',
             color=(0.1, 0.4, 0.7, 1),
         )
         self.back_button.bind(on_press=self.go_back)
@@ -207,7 +209,7 @@ class CustomSearchScreen(Screen):
         ingredient = instance.text
         if ingredient in self.selected_ingredients:
             self.selected_ingredients.remove(ingredient)
-            instance.background_color = (0.8, 0.8, 0.8, 1)  # Gray color
+            instance.background_color = (0.8, 0.85, 1, 1)  # Gray color
         else:
             self.selected_ingredients.append(ingredient)
             instance.background_color = (0.2, 0.8, 0.4, 1)  # Green color

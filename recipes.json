@@ -106,5 +106,119 @@
         "ingredients": "300g ground beef. 200g tomato sauce. 1 onion. 200g lasagna noodles. 200g cheese.",
         "steps": "Cook the beef and onions. Layer the noodles, beef sauce, and cheese in a baking dish. Bake at 180 degrees for 40 minutes.",
         "image_path": "images/lasagna.jpg"
+    },
+    {
+        "title": "Tuna Salad",
+        "ingredients": "1 can tuna. 50g mixed greens. 1 cucumber. 1 tomato. 2 tbsp mayo.",
+        "steps": "Drain the tuna. Chop the vegetables and mix with tuna and mayo.",
+        "image_path": "images/tuna_salad.jpg"
+    },
+    {
+        "title": "Beef Stir Fry",
+        "ingredients": "300g beef strips. 1 bell pepper. 1 onion. 2 tbsp soy sauce. 1 tbsp olive oil.",
+        "steps": "Stir fry the beef in olive oil. Add the vegetables and soy sauce. Cook until tender.",
+        "image_path": "images/beef_stir_fry.jpg"
+    },
+    {
+        "title": "Chicken Wrap",
+        "ingredients": "200g cooked chicken breast. 1 tortilla. 50g lettuce. 2 tbsp ranch dressing.",
+        "steps": "Chop the chicken. Place on the tortilla with lettuce and ranch dressing. Roll up the wrap.",
+        "image_path": "images/chicken_wrap.jpg"
+    },
+    {
+        "title": "Sweet and Sour Chicken",
+        "ingredients": "300g chicken breast. 1 bell pepper. 2 tbsp soy sauce. 2 tbsp vinegar. 2 tbsp sugar.",
+        "steps": "Stir fry the chicken and vegetables. Add the soy sauce, vinegar, and sugar. Simmer until the sauce thickens.",
+        "image_path": "images/sweet_and_sour_chicken.jpg"
+    },
+    {
+        "title": "BBQ Ribs",
+        "ingredients": "500g pork ribs. 100g BBQ sauce. Salt and pepper.",
+        "steps": "Season the ribs with salt and pepper. Bake for 1 hour at 180°C. Brush with BBQ sauce and bake for an additional 15 minutes.",
+        "image_path": "images/bbq_ribs.jpg"
+    },
+    {
+        "title": "Grilled Salmon",
+        "ingredients": "2 salmon fillets. 1 tbsp olive oil. Salt and pepper.",
+        "steps": "Brush the salmon with olive oil, season with salt and pepper. Grill for 5-7 minutes on each side.",
+        "image_path": "images/grilled_salmon.jpg"
+    },
+    {
+        "title": "Minestrone Soup",
+        "ingredients": "200g mixed vegetables. 400g canned tomatoes. 500ml vegetable stock. 1 onion.",
+        "steps": "Saute the onion. Add the vegetables, tomatoes, and stock. Simmer for 20 minutes.",
+        "image_path": "images/minestrone_soup.jpg"
+    },
+    {
+        "title": "Stuffed Peppers",
+        "ingredients": "4 bell peppers. 200g rice. 300g minced beef. 1 onion. 200g tomato sauce.",
+        "steps": "Cook the rice and beef. Stuff the peppers with the mixture and bake at 180°C for 30 minutes.",
+        "image_path": "images/stuffed_peppers.jpg"
+    },
+    {
+        "title": "Spaghetti Aglio e Olio",
+        "ingredients": "200g spaghetti. 2 cloves garlic. 1 tbsp olive oil. Red pepper flakes.",
+        "steps": "Cook the spaghetti. Saute the garlic in olive oil. Toss the spaghetti with garlic and red pepper flakes.",
+        "image_path": "images/spaghetti_aglio_olio.jpg"
+    },
+    {
+        "title": "Caprese Salad",
+        "ingredients": "200g mozzarella. 100g tomatoes. Fresh basil. 2 tbsp olive oil.",
+        "steps": "Slice the mozzarella and tomatoes. Arrange them with basil and drizzle with olive oil.",
+        "image_path": "images/caprese_salad.jpg"
+    },
+    {
+        "title": "Tomato Bruschetta",
+        "ingredients": "4 slices bread. 2 tomatoes. 1 clove garlic. 1 tbsp olive oil.",
+        "steps": "Toast the bread. Chop the tomatoes and garlic. Mix with olive oil and top the toasted bread.",
+        "image_path": "images/tomato_bruschetta.jpg"
+    },
+    {
+        "title": "Veggie Burger",
+        "ingredients": "1 can beans. 1 carrot. 50g breadcrumbs. 1 egg.",
+        "steps": "Mash the beans and grate the carrot. Mix with breadcrumbs and egg. Form into patties and fry.",
+        "image_path": "images/veggie_burger.jpg"
+    },
+    {
+        "title": "Chicken Parmesan",
+        "ingredients": "2 chicken breasts. 100g tomato sauce. 100g mozzarella cheese. 50g Parmesan cheese.",
+        "steps": "Bread the chicken and fry. Top with tomato sauce and cheese. Bake for 15 minutes at 180°C.",
+        "image_path": "images/chicken_parmesan.jpg"
+    },
+    {
+        "title": "Garlic Bread",
+        "ingredients": "1 baguette. 2 cloves garlic. 50g butter.",
+        "steps": "Mix crushed garlic with butter. Spread on the baguette and bake at 180°C for 10 minutes.",
+        "image_path": "images/garlic_bread.jpg"
+    },
+    {
+        "title": "Baked Potatoes",
+        "ingredients": "4 potatoes. 1 tbsp olive oil. Salt and pepper.",
+        "steps": "Rub the potatoes with olive oil, salt, and pepper. Bake at 200°C for 45 minutes.",
+        "image_path": "images/baked_potatoes.jpg"
+    },
+    {
+        "title": "Beef Tostadas",
+        "ingredients": "250g minced beef. 4 tostada shells. 100g shredded lettuce. 50g cheese.",
+        "steps": "Cook the beef with seasonings. Fill the tostada shells with beef, lettuce, and cheese.",
+        "image_path": "images/beef_tostadas.jpg"
+    },
+    {
+        "title": "Frittata",
+        "ingredients": "4 eggs. 100g mixed vegetables. 50g cheese. Salt and pepper.",
+        "steps": "Whisk the eggs and mix with vegetables and cheese. Pour into a pan and cook until set.",
+        "image_path": "images/frittata.jpg"
+    },
+    {
+        "title": "Corn on the Cob",
+        "ingredients": "4 ears of corn. 1 tbsp butter. Salt.",
+        "steps": "Boil the corn for 10 minutes. Butter and salt before serving.",
+        "image_path": "images/corn_on_the_cob.jpg"
+    },
+    {
+        "title": "Fried Rice",
+        "ingredients": "200g rice. 2 eggs. 1 onion. 2 tbsp soy sauce.",
+        "steps": "Scramble the eggs and stir fry the onion. Add the rice and soy sauce. Stir until heated through.",
+        "image_path": "images/fried_rice.jpg"
     }
 ]
