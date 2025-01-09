@@ -1,4 +1,5 @@
 from kivy.app import App
+from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.button import Button
 from kivy.uix.label import Label
 from kivy.uix.boxlayout import BoxLayout
@@ -133,7 +134,19 @@ class CustomSearchScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.selected_ingredients = []
-        self.main_layout = BoxLayout(orientation='vertical', padding=20, spacing=10)
+
+        self.layout = FloatLayout()
+
+        # Add background image
+        self.background_image = Image(
+            source='images/backgroundfrontpage.jpg',
+            allow_stretch=True,
+            keep_ratio=False
+        )
+        self.layout.add_widget(self.background_image)
+
+        # Create main layout for buttons
+        self.main_layout = BoxLayout(orientation='vertical', padding=20, spacing=10, size_hint=(1, 1))
 
         # Add checkboxes for ingredient selection
         self.ingredient_options = ["beef", "carrots", "potatoes", "pasta", "cheese", "chicken", "rice", "shrimp"]
@@ -148,12 +161,13 @@ class CustomSearchScreen(Screen):
             self.checkboxes[ingredient] = checkbox
             self.main_layout.add_widget(checkbox)
 
-        # Search button
+            # Search button
         self.search_button = Button(
             text="Find Recipes",
             size_hint=(1, 0.1),
-            background_color=(0.2, 0.6, 0.8, 1),
-            font_size=20
+            background_color=(0.8, 1, 0.8, 1),  # Soft pastel green, brighter
+            font_size=20,
+            color=(0.2, 0.6, 0.2, 1),
         )
         self.search_button.bind(on_press=self.find_recipes)
         self.main_layout.add_widget(self.search_button)
@@ -162,12 +176,16 @@ class CustomSearchScreen(Screen):
         self.back_button = Button(
             text="Back",
             size_hint=(1, 0.1),
-            background_color=(0.8, 0.4, 0.2, 1),
-            font_size=20
+            background_color=(0.6, 0.8, 1, 1),  # Soft pastel blue, muted
+            font_size=20,
+            color=(0.1, 0.4, 0.7, 1),
         )
         self.back_button.bind(on_press=self.go_back)
         self.main_layout.add_widget(self.back_button)
-        self.add_widget(self.main_layout)
+        self.layout.add_widget(self.main_layout)
+
+        # Add the FloatLayout to the screen
+        self.add_widget(self.layout)
 
     def toggle_ingredient(self, instance):
         ingredient = instance.text
